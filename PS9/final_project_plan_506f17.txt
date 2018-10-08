@@ -1,0 +1,95 @@
+FINAL PROJECT PLAN QUESTIONS
+
+Please answer the questions briefly/clearly in this document. If you would prefer to upload a PDF file, that is also OK.
+
+Final Project requirements and guidelines: https://paper.dropbox.com/doc/SI-506-Fall-2017-Final-Project-Gq7T7dbhSidk85W6JztzM
+You can also see them in the PDF file included in this assignment.
+
+* Do you plan to use one of the provided options? If so, which one? If not, how is your project plan different (briefly)?
+
+Yes, I plan to use Option 1, Facebook & iTunes.
+
+* What are the 2 REST APIs you will get data from? Name the services and provide links to the documentation.
+
+I will get data from the following two REST APIs:
+Facebook: https://graph.facebook.com/me/feed
+iTunes: https://itunes.apple.com/search
+
+* Fill out the following questions for TWO classes that you plan to define in your project:
+
+CLASS DEFINITION 1:
+- What will the class be called?
+Post
+
+- What does one instance of the class represent?
+One of the posts that I published on Facebook.
+
+- What input does the constructor of the class require?
+The constructor requires a dictionary as the input, which includes at least 3 key-value pairs including 'message' as the key and 'post content' as the value.
+
+- What are at least 2 instance variables the class will have?
+The first one is 'self', which represents an instance of the Post class (a Facebook post).
+Another one is 'post_dict', which includes the information about a post, like its content(message), publish time(publish_time), and total number of comments (comment_count).
+
+- What are at least 2 methods the class will have, and what do they do? Do they change instance variables? Do they return anything?
+The first method is a __str__ method that presents a synthesized information string about the post (message, publish time, comment count, etc.) 
+The second one is a method that will return a list of the words in my post except stopwords (e.g. “and”, “the”, “is”, etc).
+
+- What will the __str__ method of this class return?
+It will return a string in the following format: "A published feed on my Facebook personal page says: <message>, which was published at <publish_time> and has received <comment_count> comments so far."
+
+
+CLASS DEFINITION 2:
+- What will the class be called?
+Song
+
+- What does one instance of the class represent?
+It represents a song on iTunes.
+
+- What input does the constructor of the class require?
+The constructor requires a dictionary as the input, which includes at least 3 key-value pairs, such as the a song title ("trackName").
+
+- What are at least 2 instance variables the class will have?
+The first one is 'self', which represents an instance of the Song class (a song). 
+Another one is 'song_dict', which includes the information about a song ,like its title ("trackName"), singer ("artistName"), and duration ("trackTimeMillis").
+
+- What are at least 2 methods the class will have, and what do they do? Do they change instance variables? Do they return anything?
+First, a __str__ method that represents information about the song's title and duration.
+Second, a method that will return a list of 3 songs by the same artist. 
+
+- What will the __str__ method of this class return?
+It returns a string in format like: " The song <trackName> by <artistName> lasts <trackTimeMillis>."
+
+* What data are you going to sort with a key parameter? Why does this sort need a key parameter in the sorted function?
+I might need to sort the song instances that I get from the iTunes API by the songs' duration, from the longest to the shortest. I also will use a key parameter and the lambada function for a specific context in just one line of code.
+
+* Fill out the following for TWO functions you will define in your project:
+
+FUNCTION 1:
+- What is the function called?
+most_common_word
+
+- What input does the function require?
+A list of words
+
+- What should the function return?
+The most common word
+
+- Does the function get and cache data from an API, or do something different?
+Yes, it could get and cache data from the Facebook API. Also, the process can be divided into two steps. The makeFacebookRequest function which works for getting data about my posts from the Facebook graph API can be separately defined. Then, data can be cached in a cache file.
+
+FUNCTION 2:
+- What is the function called?
+get_from_iTunes
+
+- What input does the function require?
+Name of artist, media type "mtype"
+
+- What should the function return?
+A list of name of songs
+
+- Does the function get and cache data from an API, or do something different?
+Yes, it could get and cache data from the iTunes API. Also, the process can be divided into two steps. The makeFacebookRequest function which works for getting data about my posts from the Facebook graph API can be separately defined. Then, data can be cached in a cache file.
+
+* What data will be saved in the file you plan to create in your project? Will the file be a .CSV file? Or a .txt file?
+I plan to save the data in a .CSV file.
